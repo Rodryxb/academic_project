@@ -1,0 +1,40 @@
+{% extends 'academic/base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Directorio de Estudiantes</h2>
+<table class="table table-hover border">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+    </thead>
+    <tbody id="tabla-estudiantes">
+        <!-- Los datos se cargarán aquí con JavaScript -->
+    </tbody>
+</table>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Ejecutar cuando el HTML cargue
+    document.addEventListener("DOMContentLoaded", function() {
+        // Consumir el endpoint asíncronamente
+        fetch('/api/students/')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.getElementById('tabla-estudiantes');
+                data.forEach(student => {
+                    const fila = `<tr>
+                        <td>${student.id}</td>
+                        <td>${student.first_name}</td>
+                        <td>${student.last_name}</td>
+                    </tr>`;
+                    tbody.innerHTML += fila;
+                });
+            })
+            .catch(error => console.error('Error al cargar estudiantes:', error));
+    });
+</script>
+{% endblock %}

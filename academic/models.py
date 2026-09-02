@@ -1,0 +1,33 @@
+from django.db import models
+
+# Modelo para Docentes
+class Teacher(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
+# Modelo para Estudiantes
+class Student(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
+# Modelo para Asignaturas
+class Course(models.Model):
+    name = models.CharField(max_length=150)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name='courses')
+
+    def __str__(self):
+        return self.name
+
+# Modelo para Inscripciones (Tabla intermedia)
+class StudentCourse(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.student} inscrito en {self.course}"

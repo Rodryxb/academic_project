@@ -1,0 +1,11 @@
+{% extends 'academic/base.html' %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 text-center border">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold text-primary">Bienvenido al Sistema</h1>
+        <p class="col-md-8 mx-auto fs-4">Esta vista da solución al error 404 del directorio raíz. Utiliza el menú superior para navegar y consumir los datos de la API en segundo plano.</p>
+        <a href="{% url 'courses' %}" class="btn btn-primary btn-lg mt-3">Ver Asignaturas</a>
+    </div>
+</div>
+{% endblock %}
