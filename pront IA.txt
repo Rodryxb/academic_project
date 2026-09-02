@@ -1,0 +1,29 @@
+==================================================
+REGISTRO DE PROMPTS Y RESPUESTAS DE INTELIGENCIA ARTIFICIAL
+Evaluación N°1: Desarrollo Backend con Django & DRF
+Estudiante: Rodrigo Bastian Castro Sandoval
+==================================================
+
+--- PROMPT 1: Instalación y Configuración Inicial ---
+Prompt: "Dame la instalación paso a paso de Django para crear el proyecto academic_project y la aplicación academic, registrando rest_framework en el archivo settings.py."
+Respuesta de la IA: Guía paso a paso para verificar Python, crear y activar el entorno virtual, instalar Django y DRF, crear el proyecto y la app, y configurar INSTALLED_APPS en settings.py.
+
+--- PROMPT 2: Modelos de Base de Datos ---
+Prompt: "Construye las clases en models.py basadas en el modelo Entidad-Relación provisto para Teacher, Course, Student y StudentCourse, y explica cómo ejecutar las migraciones."
+Respuesta de la IA: Código Python para models.py estructurando las entidades con sus respectivas llaves foráneas y los comandos de consola para makemigrations y migrate.
+
+--- PROMPT 3: Serializadores y Endpoints DRF ---
+Prompt: "Crea el archivo serializers.py para mapear las entidades principales y configura los ViewSets y URLs para habilitar los endpoints de la API con Django REST Framework."
+Respuesta de la IA: Código de serializadores con ModelSerializer, configuración de ViewSets en views.py y enrutamiento con DefaultRouter en urls.py bajo el prefijo /api/.
+
+--- PROMPT 4: Interfaz Web y Solución Error 404 ---
+Prompt: "Genera las vistas necesarias para dar solución a la página de error 404 en la ruta raíz y maquetar la interfaz web utilizando Bootstrap mediante CDN."
+Respuesta de la IA: Implementación de vistas HTML renderizadas en views.py, maquetación de base.html con Bootstrap CDN, y creación de plantillas de inicio, cursos y estudiantes.
+
+--- PROMPT 5: Consumo Asíncrono con JavaScript ---
+Prompt: "Implementa código JavaScript usando fetch() de manera asíncrona dentro de las plantillas HTML para consultar y renderizar dinámicamente los datos de la API."
+Respuesta de la IA: Código JavaScript utilizando fetch() para consumir de forma asíncrona los endpoints de DRF e inyectar filas dinámicamente en las tablas HTML.
+
+--- PROMPT 6: Precarga de Datos de Prueba (JSON) ---
+Prompt: "Genera un conjunto de datos simulados en formato JSON para utilizarlos como precarga de datos de prueba (fixture) en el sistema académico."
+Respuesta de la IA: Estructura en formato JSON con objetos de prueba para las entidades Teacher, Course, Student y StudentCourse, junto con el comando loaddata para poblarlas en la base de datos.
